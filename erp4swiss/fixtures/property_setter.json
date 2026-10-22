@@ -1,0 +1,16 @@
+[
+ {
+  "doc_type": "Sales Invoice",
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "field_name": null,
+  "is_system_generated": 0,
+  "modified": "2026-10-22 12:00:00.000000",
+  "module": "ERP4Swiss",
+  "name": "Sales Invoice-main-default_print_format",
+  "property": "default_print_format",
+  "property_type": "Data",
+  "row_name": null,
+  "value": "QR_Sales_Invoice"
+ }
+]
