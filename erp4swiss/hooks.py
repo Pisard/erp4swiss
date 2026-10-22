@@ -290,6 +290,21 @@ override_whitelisted_methods = {
 # Sales Invoice prints with QR_Sales_Invoice by default.
 fixtures = [
 	{
+		"dt": "Custom Field",
+		"filters": [
+			[
+				"name",
+				"in",
+				[
+					"Sales Invoice-reference_information",
+					"Sales Invoice-reference",
+					"Sales Invoice-column_break_svdcf",
+					"Sales Invoice-subject",
+				],
+			],
+		],
+	},
+	{
 		"dt": "Property Setter",
 		"filters": [
 			["doc_type", "=", "Sales Invoice"],
