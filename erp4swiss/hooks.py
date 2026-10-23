@@ -53,6 +53,7 @@ required_apps = ["swiss_accounting_software"]
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Sales Invoice": "public/js/sales_invoice.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_kanban_js = {"doctype" : "public/js/doctype_kanban.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -303,6 +304,10 @@ fixtures = [
 				],
 			],
 		],
+	},
+	{
+		"dt": "Email Template",
+		"filters": [["name", "in", ["Facture (ERP4Swiss)"]]],
 	},
 	{
 		"dt": "Property Setter",

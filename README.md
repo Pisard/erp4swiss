@@ -9,6 +9,8 @@ ERPNext customisations for Switzerland.
 | Print Format `QR_Sales_Invoice` | `erp4swiss/erp4swiss/print_format/qr_sales_invoice/` | French Sales Invoice (Facture) layout; address placed for a right-window envelope; prints `Reference` and `Concerne` when filled |
 | Default print format | `erp4swiss/fixtures/property_setter.json` | Sales Invoice prints with `QR_Sales_Invoice` by default |
 | Reference / Concerne fields | `erp4swiss/fixtures/custom_field.json` | Adds `Reference` and `Subject` to Sales Invoice (section "Reference Information") |
+| "Envoyer par email" button | `erp4swiss/public/js/sales_invoice.js`, `erp4swiss/api.py` | On submitted Sales Invoices: opens the email window pre-filled (customer email, French text) with the invoice + QR slip PDF attached |
+| Email Template `Facture (ERP4Swiss)` | `erp4swiss/fixtures/email_template.json` | French invoice email text, editable in ERPNext |
 | A4 QR slip | `erp4swiss/overrides/qr_bill.py` | The QR slip page made by `swiss_accounting_software` is set to A4 (it is drawn as US Letter) |
 
 ### Requirements

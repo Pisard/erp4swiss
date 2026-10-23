@@ -1,0 +1,12 @@
+[
+ {
+  "doctype": "Email Template",
+  "name": "Facture (ERP4Swiss)",
+  "subject": "Facture {{ name }} - {{ company }}",
+  "reference_doctype": "Sales Invoice",
+  "use_html": 0,
+  "response": "<p>Bonjour,</p>\n<p>Veuillez trouver ci-joint notre facture <strong>{{ name }}</strong> du {{ frappe.utils.formatdate(posting_date) }} d'un montant de <strong>{{ frappe.utils.fmt_money(outstanding_amount, currency=currency) }}</strong>.</p>\n<p>Le bulletin de versement QR se trouve à la dernière page du PDF. Nous vous remercions de bien vouloir régler ce montant d'ici le {{ frappe.utils.formatdate(due_date) }}.</p>\n<p>Pour toute question, nous restons volontiers à votre disposition.</p>\n<p>Avec nos meilleures salutations,<br>{{ company }}</p>",
+  "response_html": null,
+  "modified": "2026-10-24 10:00:00.000000"
+ }
+]
