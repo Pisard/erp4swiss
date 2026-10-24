@@ -317,3 +317,10 @@ fixtures = [
 		],
 	},
 ]
+
+# Invoice emails are sent right away instead of waiting up to 4 minutes for the email queue.
+doc_events = {
+	"Email Queue": {
+		"after_insert": "erp4swiss.email_queue.send_immediately",
+	},
+}
