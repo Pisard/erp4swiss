@@ -1,0 +1,41 @@
+{#-
+  ERP4Swiss: replaces Frappe's templates/emails/email_footer.html for every outgoing email.
+  Same as Frappe's footer, with two differences:
+  1. "Sent via ERPNext" is replaced by "Sent via ERP4SWISS" (still hidden when
+     System Settings > "Disable Standard Email Footer" is ticked).
+  2. No read-tracking image: it pointed to the internal server address, so customers
+     only ever saw a broken image.
+-#}
+{%- set erp4swiss_url = "https://www.videocam.ch" -%}
+<div class="email-footer-container text-muted {% if email_account_footer or sender_address or default_mail_footer %}with-divider{% endif %}">
+	<!-- email_account_footer -->
+	{% if email_account_footer %}
+	<div class="email-account-footer">
+		{{ email_account_footer }}
+	</div>
+	{% endif %}
+
+	<!-- sender_address -->
+	{% if sender_address %}
+	<div class="sender-address">
+		{% for line in sender_address.splitlines(True) %}
+		<div>{{ line }}</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+
+	<!--unsubscribe link here-->
+
+	<!-- default_mail_footer -->
+	{% if default_mail_footer %}
+	<div class="default-mail-footer">
+		<div>
+			<span>
+				Sent via
+				<a class="text-muted" href="{{ erp4swiss_url }}" target="_blank">ERP4SWISS</a>
+			</span>
+		</div>
+	</div>
+	{% endif %}
+
+</div>

@@ -11,6 +11,7 @@ ERPNext customisations for Switzerland.
 | Reference / Concerne fields | `erp4swiss/fixtures/custom_field.json` | Adds `Reference` and `Subject` to Sales Invoice (section "Reference Information") |
 | "Envoyer par email" button | `erp4swiss/public/js/sales_invoice.js`, `erp4swiss/api.py` | On submitted Sales Invoices: opens the email window pre-filled (customer email, French text) with the invoice + QR slip PDF attached |
 | Email Template `Facture (ERP4Swiss)` | `erp4swiss/fixtures/email_template.json` | French invoice email text, editable in ERPNext |
+| Email footer | `erp4swiss/templates/emails/email_footer.html` | "Sent via ERP4SWISS" instead of "Sent via ERPNext"; no read-tracking image |
 | A4 QR slip | `erp4swiss/overrides/qr_bill.py` | The QR slip page made by `swiss_accounting_software` is set to A4 (it is drawn as US Letter) |
 
 ### Requirements
