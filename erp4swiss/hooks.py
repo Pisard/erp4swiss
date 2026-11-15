@@ -53,7 +53,10 @@ required_apps = ["swiss_accounting_software"]
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
-doctype_js = {"Sales Invoice": "public/js/sales_invoice.js"}
+doctype_js = {
+	"Sales Invoice": "public/js/sales_invoice.js",
+	"Payment Entry": "public/js/payment_entry.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_kanban_js = {"doctype" : "public/js/doctype_kanban.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -312,8 +315,15 @@ fixtures = [
 	{
 		"dt": "Property Setter",
 		"filters": [
-			["doc_type", "=", "Sales Invoice"],
-			["property", "=", "default_print_format"],
+			[
+				"name",
+				"in",
+				[
+					"Sales Invoice-main-default_print_format",
+					"Payment Entry-reference_no-mandatory_depends_on",
+					"Payment Entry-reference_date-mandatory_depends_on",
+				],
+			],
 		],
 	},
 ]
@@ -322,5 +332,9 @@ fixtures = [
 doc_events = {
 	"Email Queue": {
 		"after_insert": "erp4swiss.email_queue.send_immediately",
+	},
+	# Bank reference no./date optional: filled automatically when left empty.
+	"Payment Entry": {
+		"before_validate": "erp4swiss.payment_entry.fill_bank_reference",
 	},
 }
